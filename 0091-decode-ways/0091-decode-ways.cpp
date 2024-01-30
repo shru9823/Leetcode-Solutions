@@ -8,7 +8,7 @@ public:
             if(s[i] == '0' && (num < 10 || num > 26)){
                 return 0;
             }
-            if(s[i] != '0' && num <= 26 && num >= 10){
+            else if(s[i] != '0' && num <= 26 && num >= 10){
                 cur += one+two;
             }
             else if(s[i] == '0'){
