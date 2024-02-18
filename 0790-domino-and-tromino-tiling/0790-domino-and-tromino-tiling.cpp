@@ -8,10 +8,7 @@ public:
         else if(n==4){return 11;}
         for(int i=5;i<=n;i++){
             int temp = ((2*f)%MOD + t)%MOD;
-            o = t; 
-            t = th;
-            th = f;
-            f = temp;
+            o = t; t = th;th = f;f = temp;
         }
         return f;
     }
