@@ -2,8 +2,8 @@ class Solution {
 public:
     int minFlips(int a, int b, int c) {
         int ans=0;
+        int ab, bb, cb;
         while(c!=0){
-            int ab, bb, cb;
             ab = a%2;
             bb = b%2;
             cb = c%2;
