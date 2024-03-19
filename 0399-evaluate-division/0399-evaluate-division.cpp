@@ -23,12 +23,8 @@ public:
     vector<double> calcEquation(vector<vector<string>>& equations, vector<double>& values, vector<vector<string>>& queries) {
         map<string, map<string, double>> mp;
         for(int i=0;i<equations.size();i++){
-            // map<string, double> t1;
-            // t1[equations[i][1]] = values[i];
             mp[equations[i][0]][equations[i][1]] = values[i];
             
-            // map<string, double> t2;
-            // t2[equations[i][0]] = 1.0 / values[i];
             mp[equations[i][1]][equations[i][0]] = 1.0 / values[i];
         }
         
