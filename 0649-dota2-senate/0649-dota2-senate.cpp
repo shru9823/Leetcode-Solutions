@@ -13,7 +13,6 @@ public:
             if(rcnt==0 || dcnt==0){
                 break;
             }
-            cout<<q.size()<<endl;
             char a = q.front();
             q.pop();
             if(a=='R'){
