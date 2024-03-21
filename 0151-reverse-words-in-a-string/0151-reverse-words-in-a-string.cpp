@@ -4,7 +4,6 @@ public:
         string ans="";
         string temp="";
         for(char a:s){
-            // cout<<ans<<endl;
             if(a==' '){
                 if(temp != ""){
                     ans = temp+ (ans=="" ? "":" ") + ans;
