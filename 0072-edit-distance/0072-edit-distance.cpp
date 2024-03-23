@@ -1,25 +1,23 @@
 class Solution {
 public:
-    int minDistance(string word1, string word2) {
-        int m = word1.length(), n=word2.length(), dia=0,cur_dia=0;
-        vector<int> vec(n+1,0);
-        for(int j=1;j<=n;j++){
-            vec[j] = vec[j-1]+1;
+    int minDistance(string s1, string s2) {
+        int n=s1.length(), m=s2.length();
+        vector<vector<int>> dp(n+1, vector<int>(m+1));
+        for(int j=1;j<=m;j++){
+            dp[0][j] = j;
         }
-        for(int i=0;i<m;i++){
-            dia = vec[0];
-            vec[0]++;
-            for(int j=1;j<=n;j++){
-                cur_dia = vec[j];
-                if(word1[i] == word2[j-1]){
-                    vec[j] = dia;
+        for(int i=1;i<=n;i++){
+            dp[i][0] = i;
+        }
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=m;j++){
+                if(s1[i-1] == s2[j-1]){
+                    dp[i][j] = dp[i-1][j-1];
+                }else{
+                    dp[i][j] = min( dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j]))+1;
                 }
-                else{
-                    vec[j] = min(min(1+dia, vec[j-1]+1), 1+vec[j]);
-                }
-                dia = cur_dia;
             }
         }
-        return vec[n];
+        return dp[n][m];
     }
 };
