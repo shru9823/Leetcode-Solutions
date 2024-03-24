@@ -11,21 +11,22 @@
  */
 class Solution {
 public:
-    int ans = 0;
-    pair<int,int> find(TreeNode* root){
-        if(root==NULL){
-            return make_pair(0,0);
+    int find(TreeNode* root, int dir, int& ans){
+        if(root == NULL){return 0;}
+        int left = find(root->left, 0, ans);
+        int right = find(root->right, 1, ans);
+        ans = max(ans, 1+max(left,right));
+        // cout<<ans<<" "<<left<<" "<<right<<endl;
+        if(dir == -1){return ans;}
+        if(dir == 0){
+            right++;
+            return right;
         }
-        pair<int, int> p;
-        p.first = find(root->left).second;
-        p.second = find(root->right).first;
-        ans = max(ans, max(p.first, p.second));
-        p.first += 1;
-        p.second += 1;
-        return p;
+        left++;
+        return left;
     }
     int longestZigZag(TreeNode* root) {
-        find(root);
-        return ans;
+        int ans=0;
+        return find(root, -1, ans)-1;
     }
 };
