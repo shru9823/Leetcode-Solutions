@@ -26,11 +26,9 @@ public:
                 t2->next = cur;
                 t2=t2->next;
                 odd=true;}
-            cout<<cur->val<<" "<<t1->val<<" "<<t2->val<<endl;
             cur = cur->next;
             
         }
-        cout<<"hi"<<endl;
         t1->next = dummy2->next;
         if(t2){
         t2->next=NULL;}
