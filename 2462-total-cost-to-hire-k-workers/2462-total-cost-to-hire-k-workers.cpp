@@ -13,7 +13,6 @@ public:
         }
         for(int i=0;i<k;i++){
             if(!pq1.empty() && !pq2.empty()){
-                cout<<pq1.top()<<" "<<pq2.top()<<endl;
                 if(pq1.top() <= pq2.top()){
                     ans += pq1.top();
                     pq1.pop();
