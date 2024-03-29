@@ -10,9 +10,9 @@ public:
             }
             string s="";
             for(int i=0;i<26;i++){
-                if(vec[i] != 0){
+                // if(vec[i] != 0){
                     s += to_string(i) + " " + to_string(vec[i]);
-                }
+                // }
             }
             mp[s].push_back(a);
         }
