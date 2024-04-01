@@ -21,11 +21,6 @@ public:
             mps[s[l]]--;
             l++;
         }
-        if(r-l+1 < ans[0]){
-            ans[0]=r-l+1;
-            ans[1] = l;
-            ans[2] = r;
-        }
         ans[0]=r-l+1;
         ans[1] = l;
         ans[2] = r;
