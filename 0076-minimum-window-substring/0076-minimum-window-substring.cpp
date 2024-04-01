@@ -17,9 +17,7 @@ public:
             if(cnt==0){r=i;break;}
         }
         if(cnt!=0){return "";}
-        cout<<l<<" "<<r<<endl;
         while(l<=r && (mpt[s[l]]<=mps[s[l]]-1)){
-            // cout<<l<<endl;
             mps[s[l]]--;
             l++;
         }
@@ -34,9 +32,7 @@ public:
         r++;
         while(r<n){
             mps[s[r]]++;
-            // cout<<l<<" mpt[s[l]] "<<mpt[s[l]]<<endl;
             while(l<=r && (mpt[s[l]]<=mps[s[l]]-1)){
-                // cout<<l<<endl;
                 mps[s[l]]--;
                 l++;
             }
