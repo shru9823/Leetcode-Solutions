@@ -11,7 +11,6 @@ public:
             a += s[i-1];
             a+=s[i];
             if(s[i] == '0' && prev > '2'){return 0;}
-            cout<<a<<endl;
             if(a <= "26" && a >= "10"){
                 cur = two;
             }
