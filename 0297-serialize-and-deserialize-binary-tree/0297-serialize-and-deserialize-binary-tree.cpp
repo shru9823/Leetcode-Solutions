@@ -38,7 +38,6 @@ public:
                 q.push(temp->right);
             }
         }
-        cout<<ans<<endl;
         return ans;
     }
 
@@ -62,13 +61,10 @@ public:
         i++;
         root->val = n;
         q.push(root);
-        cout<<root->val<<endl;
         while(!q.empty()){
             TreeNode* temp = q.front();q.pop();
             int r=0;
-            cout<<q.size()<<endl;
             while(r<2 && i<data.length()){
-                cout<<temp->val<<" "<<data[i]<<endl;
                 if(data[i] == '-'){
                     int num = 0;
                     i++;
