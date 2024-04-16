@@ -1,13 +1,12 @@
 class Solution {
 public:
     int hIndex(vector<int>& cit) {
-        int ans=0,cur=0;
-        auto maxi = std::max_element(cit.begin(), cit.end());
-        vector<int> vec(*maxi +1, 0);
+        int ans=0,cur=0, n=cit.size();
+        vector<int> vec(n +1, 0);
         for(auto a:cit){
-            vec[a]++;
+            vec[min(a,n)]++;
         }
-        for(int i=*maxi;i>=1;i--){
+        for(int i=n;i>=1;i--){
             cur += vec[i];
             if(cur >= i){
                 ans = max(ans, i);
