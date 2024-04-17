@@ -15,7 +15,6 @@ public:
             if(num<INT_MIN/10 || (num==INT_MIN/10 && s[i]-'0'>8)){return INT_MIN;}
 
             num = num*10 + (s[i]-'0')*sign;
-            cout<<num<<endl;
             if(sign == -1 && num>0){num = num*sign;}
             i++;
         }
