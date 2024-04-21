@@ -6,10 +6,7 @@ public:
     }
     
     bool shouldPrintMessage(int timestamp, string message) {
-        if(mp.find(message) == mp.end()){
-            mp[message] = timestamp+10;
-            return true;
-        }else if(mp[message] <= timestamp){
+        if(mp.find(message) == mp.end() || mp[message] <= timestamp){
             mp[message] = timestamp+10;
             return true;
         }else{
