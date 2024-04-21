@@ -10,8 +10,9 @@ public:
         if(vec[i][j]){return vec[i][j];}
         vec[i][j] = 1;
         for(int a=0;a<4;a++){
-            if(is_valid(i+temp[a][0],j+temp[a][1], vec) && matrix[i][j] < matrix[i+temp[a][0]][j+temp[a][1]]){
-                vec[i][j] = max(vec[i][j], dfs(matrix, vec, i+temp[a][0], j+temp[a][1]) + 1);
+            int x=i+temp[a][0], y=j+temp[a][1];
+            if(is_valid(x,y, vec) && matrix[i][j] < matrix[x][y]){
+                vec[i][j] = max(vec[i][j], dfs(matrix, vec, x, y) + 1);
             }
         }
         return vec[i][j];
